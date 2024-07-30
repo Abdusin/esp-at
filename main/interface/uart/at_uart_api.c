@@ -151,75 +151,11 @@ esp_err_t at_mfg_uart_port_pins_get(at_uart_port_pins_t *config)
     config->rts_pin = CONFIG_AT_UART_PORT_RTS_PIN_DEFAULT;
 
     // get uart port and uart pins from flash
-    int8_t uart_num = g_at_cmd_port;
-    int32_t tx_pin, rx_pin, cts_pin, rts_pin;
+  
     at_mfg_params_storage_mode_t mode = at_get_mfg_params_storage_mode();
-    if (mode == AT_PARAMS_IN_MFG_NVS) {
-        nvs_handle handle;
-        if (nvs_open_from_partition(g_at_mfg_nvs_name, "factory_param", NVS_READONLY, &handle) != ESP_OK) {
-            printf("open factory_param namespace failed\r\n");
-            return ESP_FAIL;
-        }
-        if (nvs_get_i8(handle, "uart_port", &uart_num) != ESP_OK) {
-            nvs_close(handle);
-            return ESP_FAIL;
-        }
-        if (nvs_get_i32(handle, "uart_tx_pin", &tx_pin) != ESP_OK) {
-            nvs_close(handle);
-            return ESP_FAIL;
-        }
-        if (nvs_get_i32(handle, "uart_rx_pin", &rx_pin) != ESP_OK) {
-            nvs_close(handle);
-            return ESP_FAIL;
-        }
-        if (nvs_get_i32(handle, "uart_cts_pin", &cts_pin) != ESP_OK) {
-            nvs_close(handle);
-            return ESP_FAIL;
-        }
-        if (nvs_get_i32(handle, "uart_rts_pin", &rts_pin) != ESP_OK) {
-            nvs_close(handle);
-            return ESP_FAIL;
-        }
-
-    } else if (mode == AT_PARAMS_IN_PARTITION) {
-        char data[AT_BUFFER_ON_STACK_SIZE] = {0};
-        const esp_partition_t *partition = esp_at_custom_partition_find(0x40, 0xff, "factory_param");
-        if (partition) {
-            if (esp_partition_read(partition, 0, data, AT_BUFFER_ON_STACK_SIZE) != ESP_OK) {
-                return ESP_FAIL;
-            }
-            // magic number
-            if (data[0] != 0xFC || data[1] != 0xFC) {
-                return ESP_FAIL;
-            }
-            // uart configurations are stored in the 12nd to 19th bytes of the partition
-            if (data[5] != 0xFF) {
-                uart_num = data[5];
-            }
-            if (data[16] != 0xFF && data[17] != 0xFF) {
-                tx_pin = data[16];
-                rx_pin = data[17];
-            }
-            if (data[18] != 0xFF) {
-                cts_pin = data[18];
-            } else {
-                cts_pin = -1;
-            }
-            if (data[19] != 0xFF) {
-                rts_pin = data[19];
-            } else {
-                rts_pin = -1;
-            }
-        }
-    } else {
-        return ESP_FAIL;
-    }
-
-    config->number = uart_num;
-    config->tx_pin = tx_pin;
-    config->rx_pin = rx_pin;
-    config->cts_pin = cts_pin;
-    config->rts_pin = rts_pin;
+    
+    config->cts_pin = -1;
+    config->rts_pin = -1;
 
     return ESP_OK;
 }

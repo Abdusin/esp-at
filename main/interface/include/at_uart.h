@@ -45,40 +45,10 @@
 /**
  * @brief The default uart pins configurations of at command port
 */
-#if defined(CONFIG_IDF_TARGET_ESP32)
-#define CONFIG_AT_UART_PORT_TX_PIN_DEFAULT          17
-#define CONFIG_AT_UART_PORT_RX_PIN_DEFAULT          16
-#define CONFIG_AT_UART_PORT_CTS_PIN_DEFAULT         15
-#define CONFIG_AT_UART_PORT_RTS_PIN_DEFAULT         14
-#endif
-
-#if defined(CONFIG_IDF_TARGET_ESP32C3)
-#define CONFIG_AT_UART_PORT_TX_PIN_DEFAULT          7
-#define CONFIG_AT_UART_PORT_RX_PIN_DEFAULT          6
+#define CONFIG_AT_UART_PORT_TX_PIN_DEFAULT          21
+#define CONFIG_AT_UART_PORT_RX_PIN_DEFAULT          20
 #define CONFIG_AT_UART_PORT_CTS_PIN_DEFAULT         5
 #define CONFIG_AT_UART_PORT_RTS_PIN_DEFAULT         4
-#endif
-
-#if defined(CONFIG_IDF_TARGET_ESP32C6)
-#define CONFIG_AT_UART_PORT_TX_PIN_DEFAULT          7
-#define CONFIG_AT_UART_PORT_RX_PIN_DEFAULT          6
-#define CONFIG_AT_UART_PORT_CTS_PIN_DEFAULT         5
-#define CONFIG_AT_UART_PORT_RTS_PIN_DEFAULT         4
-#endif
-
-#if defined(CONFIG_IDF_TARGET_ESP32C2)
-#ifdef CONFIG_ESPTOOLPY_FLASHSIZE_2MB
-#define CONFIG_AT_UART_PORT_TX_PIN_DEFAULT          7
-#define CONFIG_AT_UART_PORT_RX_PIN_DEFAULT          6
-#define CONFIG_AT_UART_PORT_CTS_PIN_DEFAULT         19
-#define CONFIG_AT_UART_PORT_RTS_PIN_DEFAULT         20
-#else
-#define CONFIG_AT_UART_PORT_TX_PIN_DEFAULT          7
-#define CONFIG_AT_UART_PORT_RX_PIN_DEFAULT          6
-#define CONFIG_AT_UART_PORT_CTS_PIN_DEFAULT         5
-#define CONFIG_AT_UART_PORT_RTS_PIN_DEFAULT         4
-#endif
-#endif
 
 /**
  * @brief The uart configuration

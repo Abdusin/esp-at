@@ -1,0 +1,39 @@
+dependencies:
+  espressif/bootloader_support_plus:
+    component_hash: afe4621d93bd646af9b806fa97e4b5fccd47a629dccb8812ce8acfcc2f7ae909
+    source:
+      service_url: https://api.components.espressif.com/
+      type: service
+    version: 0.2.2
+  espressif/cmake_utilities:
+    component_hash: 351350613ceafba240b761b4ea991e0f231ac7a9f59a9ee901f751bddc0bb18f
+    source:
+      service_url: https://api.components.espressif.com/
+      type: service
+    version: 0.5.3
+  espressif/esp_websocket_client:
+    component_hash: ae561d39222a399ddda5e470913c3d54a3c0f53dce15b8d21a3aaa4226dd74b1
+    source:
+      service_url: https://api.components.espressif.com/
+      type: service
+    version: 1.2.3
+  espressif/mdns:
+    component_hash: 31117d76cae83a6d83ffd7f035f6fdae5bd05b914fc30b641afeb208b84de19a
+    source:
+      service_url: https://api.components.espressif.com/
+      type: service
+    version: 1.3.2
+  espressif/xz:
+    component_hash: 9a556b2c7f7450af379d28c6c1e999595ffeacddf11d4388fe869060f6fa2dab
+    source:
+      service_url: https://api.components.espressif.com/
+      type: service
+    version: 1.0.0
+  idf:
+    component_hash: null
+    source:
+      type: idf
+    version: 5.0.6
+manifest_hash: d1e9fec24fa86b786c6ba8b6325fb0766df165cf9e33683132f2bfde27ce3901
+target: esp32c3
+version: 1.0.0
