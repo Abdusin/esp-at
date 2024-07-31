@@ -229,11 +229,11 @@ static void at_uart_init(void)
     // do some possible uart workarounds
     at_uart_workaround();
 
-    printf("HEZIMATE WIFI MODULE\r\n");
+    // printf("HEZIMATE WIFI MODULE\r\n");
 
-    printf("AT cmd port:uart%d tx:%d rx:%d cts:%d rts:%d baudrate:%d\r\n",
-           g_at_cmd_port, g_uart_port_pin.tx_pin, g_uart_port_pin.rx_pin,
-           g_uart_port_pin.cts_pin, g_uart_port_pin.rts_pin, config.baud_rate);
+    // printf("AT cmd port:uart%d tx:%d rx:%d cts:%d rts:%d baudrate:%d\r\n",
+    //        g_at_cmd_port, g_uart_port_pin.tx_pin, g_uart_port_pin.rx_pin,
+    //        g_uart_port_pin.cts_pin, g_uart_port_pin.rts_pin, config.baud_rate);
 
     xTaskCreate(at_uart_task, "uTask", 1024, NULL, 1, NULL);
 }

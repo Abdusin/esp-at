@@ -1,0 +1,17 @@
+esp-at branch: release/v3.3.0.0
+esp-at docs version: release-v3.3.0.0
+no extra component dirs
+Traceback (most recent call last):
+  File "C:\Users\Abdus\Documents\GitHub\esp-at\esp-idf\tools\kconfig_new\confgen.py", line 25, in <module>
+    from future.utils import iteritems
+ModuleNotFoundError: No module named 'future'
+CMake Error at esp-idf/tools/cmake/kconfig.cmake:176 (message):
+  Failed to run confgen.py
+  (C:/Python312/python.exe;C:/Users/Abdus/Documents/GitHub/esp-at/esp-idf/tools/kconfig_new/confgen.py;--list-separator=semicolon;--kconfig;C:/Users/Abdus/Documents/GitHub/esp-at/esp-idf/Kconfig;--sdkconfig-rename;C:/Users/Abdus/Documents/GitHub/esp-at/esp-idf/sdkconfig.rename;--config;C:/Users/Abdus/Documents/GitHub/esp-at/sdkconfig;--defaults;C:/Users/Abdus/Documents/GitHub/esp-at/module_config/module_esp32c3_default/sdkconfig.defaults;--env-file;C:/Users/Abdus/Documents/GitHub/esp-at/build/config.env).
+  Error 1
+Call Stack (most recent call first):
+  esp-idf/tools/cmake/build.cmake:590 (__kconfig_generate_config)
+  esp-idf/tools/cmake/project.cmake:530 (idf_build_process)
+  CMakeLists.txt:123 (project)
+
+

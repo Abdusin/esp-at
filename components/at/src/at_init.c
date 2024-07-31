@@ -25,7 +25,7 @@
 const char *g_at_mfg_nvs_name = "mfg_nvs";
 
 // static variables
-static const char *s_ready_str = "\r\nready\r\n";
+static const char *s_ready_str = "\r\nhazir\r\n";
 static at_mfg_params_storage_mode_t s_at_param_mode = AT_PARAMS_NONE;
 static const char *TAG = "at-init";
 
@@ -75,7 +75,7 @@ static void at_module_init(void)
     int ret = 0;
     uint8_t *version = (uint8_t *)malloc(AT_TEMP_BUFFER_SIZE);
     ret = snprintf((char *)version, AT_TEMP_BUFFER_SIZE,
-                   "compile time(%s):%s %s\r\n", ESP_AT_PROJECT_COMMIT_ID, __DATE__, __TIME__);
+                   "Derleme zamani(%s):%s %s\r\n", ESP_AT_PROJECT_COMMIT_ID, __DATE__, __TIME__);
 
 #ifdef CONFIG_ESP_AT_FW_VERSION
     printf("%s\r\n", CONFIG_ESP_AT_FW_VERSION);
@@ -192,7 +192,8 @@ static esp_err_t at_wifi_config_init(void)
             return ESP_FAIL;
         }
         esp_err_t ret = esp_wifi_set_max_tx_power(tx_power);
-        printf("max tx power=%d, ret=%d\r\n", tx_power, ret);
+        // REMODED PRINTF
+        //printf("max tx power=%d, ret=%d\r\n", tx_power, ret);
 
         // country code
         wifi_country_t country;
@@ -235,7 +236,8 @@ static esp_err_t at_wifi_config_init(void)
         if (buffer[4] != 0xFF) {
             if ((version != 1) || ((version == 1) && (buffer[4] >= 10))) {
                 esp_err_t ret = esp_wifi_set_max_tx_power((int8_t)buffer[4]);
-                printf("max tx power=%d,ret=%d\r\n", buffer[4], ret);
+                // REMODED PRINTF
+                //printf("max tx power=%d,ret=%d\r\n", buffer[4], ret);
             }
         }
 
@@ -281,12 +283,14 @@ static void at_nvs_flash_init_partition(void)
     } else {
         s_at_param_mode = AT_PARAMS_NONE;
     }
-
-    printf("at param mode: %d\r\n", s_at_param_mode);
+    // REMODED PRINTF
+   // printf("at param mode: %d\r\n", s_at_param_mode);
 }
 
 static void esp_at_ready(void)
 {
+    at_exe_cmd("AT+GMR\r\n", "OK", 1000);
+
     esp_at_port_active_write_data((uint8_t *)s_ready_str, strlen(s_ready_str));
 }
 

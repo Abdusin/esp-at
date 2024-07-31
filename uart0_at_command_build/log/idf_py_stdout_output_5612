@@ -1,0 +1,33 @@
+-- silence:0, sdkconfig:C:/Users/Abdus/Documents/GitHub/esp-at/module_config/module_esp32c3_default/sdkconfig.defaults
+-- partition_table_dir: C:/Users/Abdus/Documents/GitHub/esp-at
+-- Found Git: C:/Program Files/Git/cmd/git.exe (found version "2.43.0.windows.1") 
+-- Component directory C:/Users/Abdus/Documents/GitHub/esp-at/components/fs_image does not contain a CMakeLists.txt file. No component will be added
+-- The C compiler identification is GNU 11.2.0
+-- The CXX compiler identification is GNU 11.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Users/Abdus/.espressif/tools/riscv32-esp-elf/esp-2022r1-11.2.0/riscv32-esp-elf/bin/riscv32-esp-elf-gcc.exe
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Users/Abdus/.espressif/tools/riscv32-esp-elf/esp-2022r1-11.2.0/riscv32-esp-elf/bin/riscv32-esp-elf-gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Users/Abdus/.espressif/tools/riscv32-esp-elf/esp-2022r1-11.2.0/riscv32-esp-elf/bin/riscv32-esp-elf-g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building ESP-IDF components for target esp32c3
+Dependencies lock doesn't exist, solving dependencies.
+NOTICE: Skipping optional dependency: espressif/cmake_utilities
+.......Updating lock file at C:\Users\Abdus\Documents\GitHub\esp-at\dependencies.lock
+Processing 6 dependencies:
+[1/6] espressif/bootloader_support_plus (0.2.2)
+[2/6] espressif/cmake_utilities (0.5.3)
+[3/6] espressif/esp_websocket_client (1.2.3)
+[4/6] espressif/mdns (1.3.2)
+[5/6] espressif/xz (1.0.0)
+[6/6] idf (5.0.6)
+NOTICE: Skipping optional dependency: espressif/cmake_utilities
+-- Project sdkconfig file C:/Users/Abdus/Documents/GitHub/esp-at/sdkconfig
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/Abdus/Documents/GitHub/esp-at/build/CMakeFiles/CMakeOutput.log".

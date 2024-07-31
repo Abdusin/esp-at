@@ -33,9 +33,10 @@ static void at_disable_rtc_clk_32k_if_no_ext_crys(void)
 {
     if (rtc_clk_slow_freq_get() != RTC_SLOW_FREQ_32K_XTAL) {
         rtc_clk_32k_enable(false);
-        printf("no external 32k oscillator, disable it now.\r\n");
+        // REMODED PRINTF
+        //printf("no external 32k oscillator, disable it now.\r\n");
     } else {
-        printf("external 32k oscillator already started.\r\n");
+        //printf("external 32k oscillator already started.\r\n");
     }
 }
 #endif

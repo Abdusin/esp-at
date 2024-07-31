@@ -1,0 +1,6 @@
+esp-at branch: release/v3.3.0.0
+esp-at docs version: release-v3.3.0.0
+no extra component dirs
+silence:0, ld core:C:/Users/Abdus/Documents/GitHub/esp-at/components/at/lib/libesp32c3_at_core.a
+Parsing CSV input...
+Verifying table...
